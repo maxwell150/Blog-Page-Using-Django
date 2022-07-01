@@ -133,7 +133,7 @@ def share(request, post_id):
                         {post.title}"""
             message = f"Read {post.title} at {post_url}\n\n" \
                         f"{data['name']}\'s comments: {data['comments']}"
-            send_mail(subject, message, 'lajon422@gmail.com',[data['to']])
+            send_mail(subject, message, 'email@gmail.com',[data['to']])
             sent = True
     else:
         form = EmailPosts()
