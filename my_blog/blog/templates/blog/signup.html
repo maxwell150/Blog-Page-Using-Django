@@ -1,0 +1,46 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/signup/style.css' %}">
+    <title>Signup</title>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/295/295128.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-wrapper">
+
+            <h3 class="login-text"><i class="bi bi-person-circle ac-logo"></i>Signup</h3>
+			{% for message in messages %}
+			<h5 style='text-align: center;color: red'>{{ message }}</h5>
+			{% endfor %}
+            <form method="POST" action='signup'>
+				{% csrf_token %}
+                <div class="item"><input class="input" type="text" placeholder="Username" name='username'></div> 
+                <div class="item"><input class="input" type="text" placeholder="Email" name='email'></div> 
+                <div class="item"><input class="input" type="password" placeholder="Password" name='password'> </div>
+                <div class="item"><input class="input" type="password" placeholder="Repeat Password" name='repeat_password'> </div>
+                <div class="item submit"><button type="submit">Submit</button></div>
+            </form>
+            <h2><span>OR</span></h2>
+         
+            <div class="social-media">
+
+                <a href="#"><div class="icons8-google social-mediaImg"></div></a> 
+                <a href="#"><div class="icons8-facebook-circled social-mediaImg"></div></a> 
+                <a href="#"><div class="icons8-twitter social-mediaImg"></div></a> 
+  
+            </div>
+            <span class="ac">Already have an Account? <a href={% url 'blog:login' %}>Login</a></span>
+        </div>
+
+    </div>
+</body>
+
+</html>

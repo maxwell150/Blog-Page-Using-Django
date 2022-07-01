@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>share post</title>
+</head>
+<body>
+{% if sent %}
+ <h1>E-mail successfully sent</h1>
+ <p>
+ "{{ post.title }}" was successfully sent to {{ form.cleaned_data.to }}.
+ </p>
+ {% else %}
+ <h1>Share "{{ post.title }}" by e-mail</h1>
+ <form method="POST">
+ {{ form.as_p }}
+ {% csrf_token %}
+ <input type="submit" value="Send e-mail">
+ </form>
+ {% endif %}
+</body>
+</html>
