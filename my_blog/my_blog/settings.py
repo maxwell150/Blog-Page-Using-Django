@@ -128,8 +128,8 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Sharing post by email configuration
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'lajon422@gmail.com'
-EMAIL_HOST_PASSWORD = 'lajonw!r3l3ss'
+EMAIL_HOST = ''
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
